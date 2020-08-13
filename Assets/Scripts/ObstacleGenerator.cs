@@ -6,7 +6,6 @@ public class ObstacleGenerator : MonoBehaviour
 {
     private List<GameObject>    _obstacles;
     private List<int>           _obstacleIndexes;
-    private float               _obstacleSpeed;
     private int                 _obstacleNumberLimit;
     private int                 _obstacleNumber;
 
@@ -27,7 +26,6 @@ public class ObstacleGenerator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _obstacleSpeed = 0.5f / Player.Speed;
         _obstacleNumber = Random.Range(0, _obstacleNumberLimit + 1);
 
         for (int i = 0; i < _obstacleNumber; i++)
