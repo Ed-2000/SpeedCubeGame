@@ -13,8 +13,8 @@ public class DeadMenu : MonoBehaviour
     private void Start()
     {
         _deadMenu = GameObject.Find("DeadMenu").gameObject;
-        _coins = GameObject.Find("Coins").GetComponent<Text>();
-        _traveledDistance = GameObject.Find("TraveledDistance").GetComponent<Text>();
+        //_coins = GameObject.Find("Coins").GetComponent<Text>();
+        //_traveledDistance = GameObject.Find("TraveledDistance").GetComponent<Text>();
 
         _deadMenu.SetActive(false);
     }
@@ -35,7 +35,7 @@ public class DeadMenu : MonoBehaviour
 
         _deadMenu.SetActive(true);
 
-        _traveledDistance.text = "Traveled distancee: " + Player.Singleton.distance.ToString();
-        _coins.text = "Coins: +" + Player.Singleton.earnedСoins.ToString();
+        //_traveledDistance.text = "Traveled distancee: " + Player.Singleton.distance.ToString();
+        //_coins.text = "Coins: +" + Player.Singleton.earnedСoins.ToString();
     }
 }

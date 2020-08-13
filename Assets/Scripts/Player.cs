@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        _speed = 7f;
+        _speed = 5f;
         _maxSpeed = 20f;
         _onGround = true;
 

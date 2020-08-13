@@ -2,23 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleCreator : MonoBehaviour
+public class ObstacleCreatorOnStartAndFinish : MonoBehaviour
 {
-    [SerializeField] private GameObject[]       _obstacles;
-    [SerializeField] private bool               _IsFloor;
-    [SerializeField] private int                _obstacleNumber = 2;
+    [SerializeField] private GameObject[] _obstaclesStart;
+    [SerializeField] private GameObject[] _obstaclesFinish;
+    [SerializeField] private bool _IsFloor;
+    [SerializeField] private int _obstacleNumber = 2;
 
-    private List<int>                           _indicesForActivatingObstacles;
-    private float                               _distanceForActivate;
-    private float                               _distanceForDeactivate;
+    private List<int> _indicesForActivatingObstacles;
+    private float _distanceForActivate;
+    private float _distanceForDeactivate;
 
     private void Start()
     {
         _indicesForActivatingObstacles = new List<int>();
 
-        for (int i = 0; i < _obstacles.Length; i++)
+        for (int i = 0; i < _obstaclesFinish.Length; i++)
         {
-            if (_obstacles[i].activeSelf)   _obstacles[i].SetActive(false);
+            if (_obstaclesStart[i].activeSelf) _obstaclesStart[i].SetActive(false);
+            if (_obstaclesFinish[i].activeSelf) _obstaclesFinish[i].SetActive(false);
         }
 
         if (_IsFloor)
@@ -39,7 +41,7 @@ public class ObstacleCreator : MonoBehaviour
         {
             while (_indicesForActivatingObstacles.Count < _obstacleNumber)
             {
-                int index = Random.Range(0, _obstacles.Length);
+                int index = Random.Range(0, _obstaclesFinish.Length);
 
                 if (!EntryCheck(index, _indicesForActivatingObstacles))
                 {
@@ -49,9 +51,10 @@ public class ObstacleCreator : MonoBehaviour
 
             for (int i = 0; i < _indicesForActivatingObstacles.Count; i++)
             {
-                _obstacles[_indicesForActivatingObstacles[i]].SetActive(true);
+                _obstaclesFinish[_indicesForActivatingObstacles[i]].SetActive(true);
+                _obstaclesStart[_indicesForActivatingObstacles[i]].SetActive(true);
             }
-        }
+        }        
     }
 
     private void OnTriggerExit(Collider other)
@@ -60,7 +63,7 @@ public class ObstacleCreator : MonoBehaviour
         {
             for (int i = 0; i < _indicesForActivatingObstacles.Count; i++)
             {
-                _obstacles[_indicesForActivatingObstacles[i]].SetActive(false);
+                _obstaclesFinish[_indicesForActivatingObstacles[i]].SetActive(false);
             }
             _indicesForActivatingObstacles.Clear();
         }
