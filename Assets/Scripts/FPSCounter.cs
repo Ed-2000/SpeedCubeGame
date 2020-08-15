@@ -32,9 +32,4 @@ public class FPSCounter : MonoBehaviour
             _iGlobal = 0;
         }
     }
-
-    public  void PrintFPS()
-    {
-        _fpsText.text = "fps:" + _fps.ToString();
-    }
 }

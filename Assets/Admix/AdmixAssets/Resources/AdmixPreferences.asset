@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: -253376139, guid: e97a86927d98e084a8bf97d7deb72c19, type: 3}
   m_Name: AdmixPreferences
   m_EditorClassIdentifier: 
-  ApplicationName: 
+  ApplicationName: SpeedCube
   GenericPackageName: com.DefaultCompany.ProductName
-  ApplicationIdentifier: 
-  _applicationToken: 
+  ApplicationIdentifier: 2308fe8d-cac9-4414-88da-0c7484bc6376
+  _applicationToken: ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmZhV1FpT2lJeU16QTRabVU0WkMxallXTTVMVFEwTVRRdE9EaGtZUzB3WXpjME9EUmlZell6TnpZaUxDSjFjMlZ5U1dRaU9pSm1OV0ZpTkRBM1lTMHhNV0UzTFRRM05tTXRZamxpTnkxbU5qTTRNRFE1T1RFMk56TWlMQ0poY0hCRmJtZHBibVVpT2lKVmJtbDBlU0lzSW1saGRDSTZNVFU1TnpRd09ESXdNWDAuZEtNeEktSHBPNEdkbTNTdjJ5YkpiYmxCRHYwMUI0SF95MEpzaXMwQ2F4aw==
   _logBehaviour: 2
   SceneIdentifiersManager:
-    SceneStructsList: []
-  AppStateMode: 0
+    SceneStructsList:
+    - _sceneName: SampleScene
+      _sceneIdentifier: 0a79ffb2-fefb-4ecb-b42c-527862045806
+      _scenePath: Assets/Scenes/SampleScene.unity
+      _applicationName: SpeedCube
+  AppStateMode: 1

@@ -31,8 +31,6 @@ public class DeadMenu : MonoBehaviour
 
     public static void ActiveDeadMenu()
     {
-
-
         _deadMenu.SetActive(true);
 
         //_traveledDistance.text = "Traveled distancee: " + Player.Singleton.distance.ToString();

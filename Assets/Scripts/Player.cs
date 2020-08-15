@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        _speed = 5f;
+        _speed = 8f;
         _maxSpeed = 20f;
         _onGround = true;
 
@@ -52,6 +52,9 @@ public class Player : MonoBehaviour
             pos.z = 0;
             transform.position = pos;
         }
+
+        if (transform.position.z <= -3 && transform.position.z >= -5) _speed = 5;
+
     }
 
     private void OnTriggerEnter(Collider other)
