@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
-    private float       _speed = 4;
-    private Transform   _player;
-    private Vector3     _position;
+    [SerializeField] private float      _moveSpeed = 4;
+
+    private Transform                   _player;
+    private Vector3                     _position;
 
     private void Start()
     {
@@ -22,11 +23,11 @@ public class CameraMove : MonoBehaviour
     {
         Vector3 currentPosition = _player.position;
         currentPosition.y = transform.position.y;
-        currentPosition.z -= 3;
-        transform.position = Vector3.Lerp(transform.position, currentPosition, _speed * Time.deltaTime);
+        currentPosition.z -= 2f;
+        transform.position = Vector3.Lerp(transform.position, currentPosition, _moveSpeed * Time.deltaTime);
     }
 
-    public void CamerTeleportTo(float dist)
+    public void CameraTeleportTo(float dist)
     {
         Vector3 pos = transform.position;
         pos.z = dist;

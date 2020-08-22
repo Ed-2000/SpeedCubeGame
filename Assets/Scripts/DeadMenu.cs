@@ -29,9 +29,9 @@ public class DeadMenu : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public static void ActiveDeadMenu()
+    public static void ActivationControl(bool isActive)
     {
-        _deadMenu.SetActive(true);
+        _deadMenu.SetActive(isActive);
 
         //_traveledDistance.text = "Traveled distancee: " + Player.Singleton.distance.ToString();
         //_coins.text = "Coins: +" + Player.Singleton.earnedСoins.ToString();

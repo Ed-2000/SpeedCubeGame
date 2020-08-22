@@ -11,20 +11,20 @@ public class SpeedCounter : MonoBehaviour
 
     private void Start()
     {
-        _oldSpeed = Player.Speed;
+        _oldSpeed = PlayerMove.Speed;
     }
 
     private void Update()
     {
-        if (Player.Speed != _oldSpeed)
+        if (PlayerMove.Speed != _oldSpeed)
         {
             PrintSpeed();
-            _oldSpeed = Player.Speed;
+            _oldSpeed = PlayerMove.Speed;
         }
     }
 
     public void PrintSpeed()
     {
-        _speedText.text = "speed:" + Mathf.Round(Player.Speed).ToString();
+        _speedText.text = "speed:" + Mathf.Round(PlayerMove.Speed).ToString();
     }
 }

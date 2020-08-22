@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class Turn : MonoBehaviour
 {
-    public void TurnOn()
+    public static void TurnOn(GameObject turnObject, bool up = false)
     {
-        transform.rotation *= Quaternion.Euler(0, 0, 180);
+        if (!up)
+        {
+            turnObject.transform.rotation *= Quaternion.Euler(0, 0, 180);
+        }
+        else
+        {
+            turnObject.transform.rotation = Quaternion.identity;
+        }
     }
 }
